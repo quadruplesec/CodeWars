@@ -17,7 +17,8 @@ foo9 -> foo10
 
 std::string incrementString(const std::string &str) 
 {    
-    if (!isdigit(str[str.size()-1]) || str.empty()) {
+    if (!isdigit(str[str.size()-1]) || str.empty())
+    {
         std::string ret_str = str;
         ret_str += "1";
         return ret_str;
@@ -26,7 +27,9 @@ std::string incrementString(const std::string &str)
     size_t i = str.size() - 1;
 
     while (isdigit(str[i]))
+    {
         i--;
+    }
 
     std::string num_part = str.substr(++i, str.size());
     std::string ret_str = str.substr(0, i);
@@ -35,7 +38,8 @@ std::string incrementString(const std::string &str)
     int num = std::stoi(num_part);
     ++num;
 
-    if (std::to_string(num).size() < num_size) {
+    if (std::to_string(num).size() < num_size)
+    {
         size_t difference = num_size - std::to_string(num).size();
         while (difference--)
             ret_str += "0";
@@ -43,7 +47,8 @@ std::string incrementString(const std::string &str)
         ret_str += std::to_string(num);
     }
 
-    else {
+    else
+    {
         ret_str += std::to_string(num);
     }
     
