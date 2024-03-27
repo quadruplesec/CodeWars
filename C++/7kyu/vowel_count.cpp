@@ -9,19 +9,17 @@ The input string will only consist of lower case letters and/or spaces.
 #include <string>
 #include <cctype>
 
-int getCount(const std::string &inputStr) {
-    
+int getCount(const std::string &inputStr)
+{    
     int num_vowels = 0;
     
-    for (size_t i = 0; i < inputStr.size(); i++) {
-        
-        switch (tolower(inputStr[i])) {
-
+    for (size_t i = 0; i < inputStr.size(); i++)
+    {    
+        switch (tolower(inputStr[i]))
+        {
             case 'a': case 'e': case 'i': case 'o': case 'u':
-            num_vowels++; break; 
-            
+            num_vowels++; break;     
         }
-
     }
 
     return num_vowels;

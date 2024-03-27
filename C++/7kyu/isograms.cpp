@@ -10,14 +10,18 @@ Assume the empty string is an isogram. Ignore letter case.
 #include <cctype>
 #include <algorithm>
 
-bool is_isogram(std::string str) {
-    for (size_t i = 0; i < str.size(); i++) {
+bool is_isogram(std::string str)
+{
+    for (size_t i = 0; i < str.size(); i++)
+    {
         str[i] = tolower(str[i]);
     }
 
-    for (size_t i = 0; i < str.size(); i++) {
+    for (size_t i = 0; i < str.size(); i++)
+    {
         int counter = std::count(str.begin(), str.end(), str[i]);
-        if (counter > 1) {
+        if (counter > 1)
+        {
             return false;
         } 
     }
